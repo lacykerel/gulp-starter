@@ -1,61 +1,38 @@
-var gulp         = require('gulp'),
-    sass         = require('gulp-sass'),
-    gutil        = require('gulp-util'),
-    connect      = require('gulp-connect'),
-    rename       = require('gulp-rename'),
-    minifycss    = require('gulp-minify-css'),
-    sasslint     = require('gulp-scss-lint'),
-    autoprefixer = require('gulp-autoprefixer'),
-    sourcemaps   = require('gulp-sourcemaps');
+var gulp   = require('gulp'),
+    jshint = require('gulp-jshint'),
+    sass   = require('gulp-ruby-sass'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
 
-// Sass Task
+// Lint Task
+gulp.task('lint', function() {
+  return gulp.src('js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'));
+});
+
+// Compile Sass
 gulp.task('sass', function() {
-  return sass('sass/main.scss', {
-    'sourcemap': true,
-    'style': 'expanded',
-    'lineNumbers': true
-  })
-  .pipe(sass().on('error', sass.logError))
-  .pipe(autoprefixer({ browsers: ['last 2 version', 'Firefox < 20', '> 5%'] }))
-  .pipe(sourcemaps.write())
-  .pipe(gulp.dest('./css/'));
+  return sass('./scss/**/*.scss', {style: 'expanded'})
+    .pipe(gulp.dest('./css'))
 });
 
-// Sass Lint Task
-gulp.task('sass-lint', function() {
-  return gulp.src('sass/main.scss')
-    .pipe(sasslint({
-      'config': '.scss-lint.yml'
-    }));
+// Concatenate & Minify JS
+gulp.task('scripts', function() {
+  return gulp.src('js*.js')
+      .pipe(concat('all.js'))
+      .pipe(gulp.dest('dist'))
+      .pipe(rename('all.min.js'))
+      .pipe(uglify())
+      .pipe(gulp.dest('dist'));
 });
 
-// Connect Task
-gulp.task('connect', function(){
-  connect.server({
-    port: 8989,
-    livereload: true
-  });
-});
-
-// Sass Minify Task
-gulp.task('sass-minify', function() {
-  return gulp.src('css/main.css')
-  // First, save the unminified version
-  .pipe(gulp.dest('dist/css'))
-  // Now rename
-  .pipe(rename({suffix: '.min'}))
-  // Actually minify the file
-  .pipe(minifycss())
-  // And then save it again with its new name
-  .pipe(gulp.dest('dist/css'));
-});
-
-
-// Watch task
+// Watch Files For changes
 gulp.task('watch', function() {
-  gulp.watch('sass/**/*.scss',['sass']);
+  gulp.watch('js/*.js', ['lint', 'scripts']);
+  gulp.watch('./scss/**/*.scss', ['sass']);
 });
-// Build Task
-gulp.task('build', ['sass', 'sass-minify']);
+
 // Default Task
-gulp.task('default', ['sass', 'sass-lint', 'connect', 'watch']);
+gulp.task('default', ['lint', 'sass', 'scripts', 'watch']);

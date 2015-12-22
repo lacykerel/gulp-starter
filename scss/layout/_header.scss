@@ -1,0 +1,13 @@
+header {
+	background-color: #fff;
+	color: #444;
+	font-family: 'Playfair Display', serif;
+	@include span(12);
+	padding: 20px;
+	.site-logo {
+		text-decoration: none;
+		text-transform: uppercase;
+		color: #000;
+		font-size: 24px;
+	}
+}

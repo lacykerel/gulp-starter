@@ -1,0 +1,21 @@
+{
+  "name": "gulp-starter",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kerel Lacy <yakkez@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/lacykerel/gulp-starter",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "susy": "~2.2.9"
+  }
+}
