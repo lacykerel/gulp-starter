@@ -3,7 +3,6 @@ nav {
 	li {
 		display: inline-block;
 		list-style: none;
-		@include padding-mixin(10px);
 		a {
 			color: #999;
 			text-decoration: none;

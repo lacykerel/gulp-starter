@@ -1,5 +1,13 @@
-//Susy Framework
-@import '../bower_components/susy/sass/susy';
+//Susy Framework and Susy Defaults
+@import '../../bower_components/susy/sass/susy';
+
+//Susy Maps
+$susy: (
+	columns: 12,
+	gutters: 1/2,
+	math: fluid,
+	gutter-position: outside,
+);
 
 // Base
 @import
