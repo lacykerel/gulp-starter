@@ -4,9 +4,94 @@
 	<title>Document</title>
 	<meta name="charset" content="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/main.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,300,100,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+
 </head>
-<body>
-	
+<body class="tile">
+	<div class="container">
+		<header>
+			<h1>Introduction</h1>
+			<p>So here it is, the meat and potatoes of your whole project. The style tile <b>is</b> important, do not look at this as a chore but instead,
+			a table of contents to the start of creating a properly functioning application. Cheers! Here's to the begining of something solid.</p>
+			<div class="align-center">
+				<img class="beer-img" src="../assets/img/beer.png" alt="">
+			</div>
+		</header>
+
+		<section>
+			<h1>Colors</h1>
+			<p>Having the correct brand colors available when starting a new project is a must. Whats also important is how you define those brand color variables. Try to stay away from color specific and non semantic variables. If the client/customer decides to change a color at any given point you can easily achieve the update by changing the color hex-code vs changing the variable name across several sass files.</p>
+			<div class="content">
+				<div class="row">
+					<div class="column"><div class="circle circle--primaryColor"> <span></span></div></div>
+					<div class="column"><div class="circle circle--secondaryColor"></div></div>
+					<div class="column"><div class="circle circle--tertiaryColor"></div></div>
+					<div class="column"><div class="circle circle--quaternaryColor"></div></div>
+					<div class="column"><div class="circle circle--quinaryColor"></div></div>
+					<div class="column"><div class="circle circle--senaryColor"></div></div>
+					<div class="column"><div class="circle circle--septenaryColor"></div></div>
+					<div class="column last"><div class="circle circle--default"></div></div>
+				</div>
+				<div class="row">
+					<div class="column"><span>#fdfdfd</span></div>
+					<div class="column"><span>#d7d7d7</span></div>
+					<div class="column"><span>#facda1</span></div>
+					<div class="column"><span>#f3a174</span></div>
+					<div class="column"><span>#a3a3a3</span></div>
+					<div class="column"><span>#f8e3cf</span></div>
+					<div class="column"><span>#90b7bc</span></div>
+					<div class="column last"><span>#000</span></div>
+				</div>
+				<div class="row">
+					<div class="column"><span>$Primary Color</span></div>
+					<div class="column"><span>$Secondary Color</span></div>
+					<div class="column"><span>$Tertiary Color</span></div>
+					<div class="column"><span>$Quaternary Color</span></div>
+					<div class="column"><span>$Quinary Color</span></div>
+					<div class="column"><span>$Senary Color</span></div>
+					<div class="column"><span>$Septenary Color</span></div>
+					<div class="column last"><span>$Default</span></div>
+				</div>
+			</div>
+		</section>
+		<section>
+			<h1>Typography</h1>
+			<p></p>
+			<div class="row">
+				<div class="column">
+					<h2>Rocket Slab</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column">
+					<span>$primary-font</span>
+				</div>
+			</div>
+
+		</section>
+		<section class="buttons">
+			<h1>Buttons</h1>
+			<div class="row">
+				<div class="column"><a href="" class="btn--septenaryColor">Button Primary</a></div>
+				<div class="column"><a href="" class="btn--tertiaryColor">Button Secondary</a></div>
+				<div class="column"><a href="" class="btn--secondaryColor">Default</a></div>
+				<div class="column"><a href="" class="btn--btn-success">Success</a></div>
+				<div class="column"><a href="" class="btn--quaternaryColor">Danger</a></div>
+				<div class="column"><a href="" class="btn--senaryColor">Warning</a></div>
+			</div>
+		</section>
+		<section>
+			<h1>Paragraph</h1>
+		</section>
+	</div>
+
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="../assets/js/vendor/transit.min.js"></script>
+	<script src="../assets/js/transition.js"></script>
+
+
+
 </body>
 </html>

@@ -1,0 +1,62 @@
+$susy: (
+	container: 70em,
+	columns: 12,
+	gutters: 1/6,
+	global-box-sizing: border-box
+);
+
+// Configuring Susy Defaults
+$total-columns: 4;
+$column-width: 4rem;
+$gutter-width: 1rem;
+$grid-padding: 0;
+
+$med: 8;
+$large: 10;
+
+// Color Variables
+$default:         #000;
+$primaryColor:    #FDFDFD;
+$secondaryColor:  #D7D7D7;
+$tertiaryColor:   #FACDA1;
+$quaternaryColor: #F3A174;
+$quinaryColor:    #A3A3A3;
+$senaryColor:     #F8E3CF;
+$septenaryColor:  #90B7BC;
+
+$colorMap: (
+	'default':         $default,
+	'primaryColor':    $primaryColor,
+	'secondaryColor':  $secondaryColor,
+	'tertiaryColor':   $tertiaryColor,
+	'quaternaryColor': $quaternaryColor,
+	'quinaryColor':    $quinaryColor,
+	'senaryColor':     $senaryColor,
+	'septenaryColor':  $septenaryColor,
+  'btn-success':     #71ac7b,
+);
+
+@each $color-name, $color-code in $colorMap {
+	.circle--#{$color-name}, .btn--#{$color-name} {
+		background-color: #{$color-code};
+	}
+  .btn--#{$color-name} {
+    @extend %btn;
+  }
+}
+
+// Headings
+$headings: (
+	'h1': '2.250em',
+	'h2': '1.875em',
+	'h3': '1.5em',
+	'h4': '1.125em',
+	'h5': '0.875em',
+	'h6': '0.750em'
+);
+
+@each $heading, $font-size in $headings {
+	#{$heading} {
+		font-size: #{$font-size};
+	}
+}

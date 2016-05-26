@@ -27,13 +27,13 @@ var config = {
 // Sass Tasks
 gulp.task('styles', function(){
   return gulp.src(config.scss)
-             .pipe(sourcemaps.init())
-             .pipe(sass()
+             // .pipe(sourcemaps.init())
+             .pipe(sass({outputStyle: 'expanded'})
              .on('error', sass.logError))
              .pipe(autoprefixer('last 3 versions'))
-             .pipe(minifycss())
-             .pipe(rename({suffix: '.min'}))
-             .pipe(sourcemaps.write())
+             // .pipe(minifycss())
+             // .pipe(rename({suffix: '.min'}))
+             // .pipe(sourcemaps.write('./maps'))
              .pipe(gulp.dest(''+config.css+''))
              .pipe(reload({stream:true}));
 });
@@ -41,7 +41,7 @@ gulp.task('styles', function(){
 // Html Tasks
 gulp.task('html', function(){
   return gulp.src(config.html)
-             .pipe(reload({stream:true}));
+    .pipe(reload({stream:true}));
 });
 
 // Browser-sync Tasks
@@ -88,15 +88,6 @@ gulp.task('build:delete', function(res){
 // build task
 gulp.task('build', ['build:create', 'build:clean']);
 
-
-// // Gulp Server
-// gulp.task('webserver', function(){
-//   connect.server({
-//     port: 80,
-//     host: 'local.dev'
-//   });
-// });
-
 // Lint Task
 gulp.task('lint', function() {
   return gulp.src('./assets/js/*.js')
@@ -104,11 +95,6 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('default'));
 });
 
-// // Compile Sass
-// gulp.task('sass', function() {
-//   return sass('./assets/scss/**/*.scss', {style: 'expanded'})
-//     .pipe(gulp.dest('./dist/css'));
-// });
 
 // Concatenate & Minify JS
 gulp.task('scripts', function() {

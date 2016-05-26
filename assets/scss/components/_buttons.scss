@@ -1,0 +1,15 @@
+%btn {
+	border: none;
+	display: block;
+	font-size: 1em;
+	font-family: 'Open Sans';
+	width: 100%;
+	padding: 20px;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 10px;
+	&:hover {
+		color: #fff;
+	}
+}

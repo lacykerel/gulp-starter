@@ -1,3 +1,30 @@
 body {
-	background-color: #fbfbfb;
+	background-color: #f2f2f2;
+	font-family: 'Roboto Slab';
+	font-size: 100%;
 }
+
+p {
+	font-size: 1.25em;
+	line-height: 1.4em;
+	margin-bottom: 20px;
+}
+
+pre {
+	background-color: #3A4F5D;
+	border-radius: 3px;
+	color: #fff;
+	padding: 12px;
+	margin-left: -12px;
+	margin-right: -12px;
+	overflow: auto;
+	white-space: pre;
+	word-wrap: normal;
+	code {
+		color: #fff;
+		font-family: Inconsolata, Monaco, Consolas, Courier, monospace;
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+
